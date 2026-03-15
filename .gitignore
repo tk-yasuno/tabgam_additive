@@ -47,6 +47,9 @@ outputs/models/*.h5
 # Data (large CSV files)
 # data/*.csv  # Uncomment if data files are too large for GitHub
 
+# Privacy-sensitive data (regional/personal information)
+data/260311v1_inspection_base_and_hazard_estimation.csv
+
 # Logs
 *.log
 
