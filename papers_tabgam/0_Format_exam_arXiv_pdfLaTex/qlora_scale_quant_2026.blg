@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: qlora_scale_quant_2026.aux
+Reallocating 'name_of_file' (item size: 1) to 6 items.
+The style file: unsrt.bst
+Reallocating 'name_of_file' (item size: 1) to 23 items.
+Database file #1: qlora_scale_quant_2026.bib
+You've used 34 entries,
+            1791 wiz_defined-function locations,
+            571 strings with 8418 characters,
+and the built_in function-call counts, 6211 in all, are:
+= -- 414
+> -- 351
+< -- 0
++ -- 129
+- -- 95
+* -- 285
+:= -- 1008
+add.period$ -- 100
+call.type$ -- 34
+change.case$ -- 36
+chr.to.int$ -- 0
+cite$ -- 34
+duplicate$ -- 363
+empty$ -- 765
+format.name$ -- 95
+if$ -- 1429
+int.to.chr$ -- 0
+int.to.str$ -- 34
+missing$ -- 30
+newline$ -- 171
+num.names$ -- 34
+pop$ -- 206
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 102
+stack$ -- 0
+substring$ -- 25
+swap$ -- 57
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 36
+width$ -- 36
+write$ -- 341

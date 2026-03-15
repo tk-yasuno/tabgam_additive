@@ -1,0 +1,344 @@
+{
+  "model_names": [
+    "GAM",
+    "FAM",
+    "GBAM",
+    "TabNAM"
+  ],
+  "best_weights": [
+    0.15633777719907438,
+    0.0,
+    0.19560740450782052,
+    0.6480548182931052
+  ],
+  "best_score": 0.7406789028043533,
+  "optimization_metric": "r2",
+  "search_history": [
+    {
+      "iteration": 0,
+      "method": "uniform",
+      "reason": "Baseline: uniform weights",
+      "weights": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "weights_dict": {
+        "GAM": 0.25,
+        "FAM": 0.25,
+        "GBAM": 0.25,
+        "TabNAM": 0.25
+      },
+      "score": 0.683655554463884,
+      "metrics": {
+        "rmse": 0.5187306020593624,
+        "mae": 0.22867185733943454,
+        "r2": 0.683655554463884
+      },
+      "is_best": true,
+      "timestamp": "2026-03-15T13:20:56.350832"
+    },
+    {
+      "iteration": 1,
+      "method": "scipy_SLSQP",
+      "reason": "Local optimization with SLSQP",
+      "weights": [
+        0.15535549721352696,
+        5.1864062244601475e-18,
+        0.195322258079836,
+        0.6493222447066371
+      ],
+      "weights_dict": {
+        "GAM": 0.15535549721352696,
+        "FAM": 5.1864062244601475e-18,
+        "GBAM": 0.195322258079836,
+        "TabNAM": 0.6493222447066371
+      },
+      "score": 0.7406788210381048,
+      "metrics": {
+        "rmse": 0.4696569533974132,
+        "mae": 0.20389408173143656,
+        "r2": 0.7406788210381048
+      },
+      "is_best": true,
+      "timestamp": "2026-03-15T13:20:56.401366"
+    },
+    {
+      "iteration": 2,
+      "method": "differential_evolution",
+      "reason": "Global optimization with Differential Evolution",
+      "weights": [
+        0.15633777719907438,
+        0.0,
+        0.19560740450782052,
+        0.6480548182931052
+      ],
+      "weights_dict": {
+        "GAM": 0.15633777719907438,
+        "FAM": 0.0,
+        "GBAM": 0.19560740450782052,
+        "TabNAM": 0.6480548182931052
+      },
+      "score": 0.7406789028043533,
+      "metrics": {
+        "rmse": 0.4696568793539232,
+        "mae": 0.20393366565124338,
+        "r2": 0.7406789028043533
+      },
+      "is_best": true,
+      "timestamp": "2026-03-15T13:20:57.044729"
+    },
+    {
+      "iteration": 3,
+      "method": "individual_best",
+      "reason": "Test individual model performance",
+      "weights": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "weights_dict": {
+        "GAM": 0.0,
+        "FAM": 0.0,
+        "GBAM": 0.0,
+        "TabNAM": 1.0
+      },
+      "score": 0.7311245133260267,
+      "metrics": {
+        "rmse": 0.4782306068692146,
+        "mae": 0.1969114217518247,
+        "r2": 0.7311245133260267
+      },
+      "is_best": false,
+      "timestamp": "2026-03-15T13:20:57.045729"
+    },
+    {
+      "iteration": 4,
+      "method": "random_perturbation",
+      "reason": "Random perturbation around best weights (iter 4)",
+      "weights": [
+        0.16869961565572833,
+        0.0,
+        0.2909292958670662,
+        0.5403710884772055
+      ],
+      "weights_dict": {
+        "GAM": 0.16869961565572833,
+        "FAM": 0.0,
+        "GBAM": 0.2909292958670662,
+        "TabNAM": 0.5403710884772055
+      },
+      "score": 0.7391244089961944,
+      "metrics": {
+        "rmse": 0.47106244927523516,
+        "mae": 0.2064882933898841,
+        "r2": 0.7391244089961944
+      },
+      "is_best": false,
+      "timestamp": "2026-03-15T13:20:57.048247"
+    },
+    {
+      "iteration": 5,
+      "method": "random_perturbation",
+      "reason": "Random perturbation around best weights (iter 5)",
+      "weights": [
+        0.1482408380765688,
+        0.0423017276409871,
+        0.21957082738726075,
+        0.5898866068951834
+      ],
+      "weights_dict": {
+        "GAM": 0.1482408380765688,
+        "FAM": 0.0423017276409871,
+        "GBAM": 0.21957082738726075,
+        "TabNAM": 0.5898866068951834
+      },
+      "score": 0.7378057466434851,
+      "metrics": {
+        "rmse": 0.47225150135241895,
+        "mae": 0.2069491621972041,
+        "r2": 0.7378057466434851
+      },
+      "is_best": false,
+      "timestamp": "2026-03-15T13:20:57.049785"
+    },
+    {
+      "iteration": 6,
+      "method": "random_perturbation",
+      "reason": "Random perturbation around best weights (iter 6)",
+      "weights": [
+        0.1876226289665332,
+        0.020201305320618517,
+        0.1776760337364505,
+        0.6145000319763978
+      ],
+      "weights_dict": {
+        "GAM": 0.1876226289665332,
+        "FAM": 0.020201305320618517,
+        "GBAM": 0.1776760337364505,
+        "TabNAM": 0.6145000319763978
+      },
+      "score": 0.7398233930439245,
+      "metrics": {
+        "rmse": 0.47043094904827154,
+        "mae": 0.20592802230797344,
+        "r2": 0.7398233930439245
+      },
+      "is_best": false,
+      "timestamp": "2026-03-15T13:20:57.049785"
+    },
+    {
+      "iteration": 7,
+      "method": "random_perturbation",
+      "reason": "Random perturbation around best weights (iter 7)",
+      "weights": [
+        0.16647470412326268,
+        0.06555035257595623,
+        0.21355457536230182,
+        0.5544203679384792
+      ],
+      "weights_dict": {
+        "GAM": 0.16647470412326268,
+        "FAM": 0.06555035257595623,
+        "GBAM": 0.21355457536230182,
+        "TabNAM": 0.5544203679384792
+      },
+      "score": 0.7353551240622164,
+      "metrics": {
+        "rmse": 0.47445333933393624,
+        "mae": 0.2090502334475244,
+        "r2": 0.7353551240622164
+      },
+      "is_best": false,
+      "timestamp": "2026-03-15T13:20:57.053404"
+    },
+    {
+      "iteration": 8,
+      "method": "random_perturbation",
+      "reason": "Random perturbation around best weights (iter 8)",
+      "weights": [
+        0.11846434113512368,
+        0.035483381267899766,
+        0.23800989235558836,
+        0.6080423852413882
+      ],
+      "weights_dict": {
+        "GAM": 0.11846434113512368,
+        "FAM": 0.035483381267899766,
+        "GBAM": 0.23800989235558836,
+        "TabNAM": 0.6080423852413882
+      },
+      "score": 0.7380551131986182,
+      "metrics": {
+        "rmse": 0.47202687449195874,
+        "mae": 0.20584602638141455,
+        "r2": 0.7380551131986182
+      },
+      "is_best": false,
+      "timestamp": "2026-03-15T13:20:57.055697"
+    },
+    {
+      "iteration": 9,
+      "method": "random_perturbation",
+      "reason": "Random perturbation around best weights (iter 9)",
+      "weights": [
+        0.20349356240232244,
+        0.0,
+        0.20646234357438906,
+        0.5900440940232884
+      ],
+      "weights_dict": {
+        "GAM": 0.20349356240232244,
+        "FAM": 0.0,
+        "GBAM": 0.20646234357438906,
+        "TabNAM": 0.5900440940232884
+      },
+      "score": 0.7404913858667348,
+      "metrics": {
+        "rmse": 0.4698266547900366,
+        "mae": 0.2057856594363925,
+        "r2": 0.7404913858667348
+      },
+      "is_best": false,
+      "timestamp": "2026-03-15T13:20:57.057709"
+    },
+    {
+      "iteration": 10,
+      "method": "random_perturbation",
+      "reason": "Random perturbation around best weights (iter 10)",
+      "weights": [
+        0.09718093026628775,
+        0.0024986732962915055,
+        0.15858355943559757,
+        0.7417368370018231
+      ],
+      "weights_dict": {
+        "GAM": 0.09718093026628775,
+        "FAM": 0.0024986732962915055,
+        "GBAM": 0.15858355943559757,
+        "TabNAM": 0.7417368370018231
+      },
+      "score": 0.7400910166481023,
+      "metrics": {
+        "rmse": 0.47018893878505874,
+        "mae": 0.2013079238853707,
+        "r2": 0.7400910166481023
+      },
+      "is_best": false,
+      "timestamp": "2026-03-15T13:20:57.060953"
+    },
+    {
+      "iteration": 11,
+      "method": "random_perturbation",
+      "reason": "Random perturbation around best weights (iter 11)",
+      "weights": [
+        0.16970627782690934,
+        0.034907632866475496,
+        0.21359178707313256,
+        0.5817943022334825
+      ],
+      "weights_dict": {
+        "GAM": 0.16970627782690934,
+        "FAM": 0.034907632866475496,
+        "GBAM": 0.21359178707313256,
+        "TabNAM": 0.5817943022334825
+      },
+      "score": 0.7384584436511672,
+      "metrics": {
+        "rmse": 0.4716633320740539,
+        "mae": 0.20706517906972305,
+        "r2": 0.7384584436511672
+      },
+      "is_best": false,
+      "timestamp": "2026-03-15T13:20:57.062952"
+    },
+    {
+      "iteration": 12,
+      "method": "random_perturbation",
+      "reason": "Random perturbation around best weights (iter 12)",
+      "weights": [
+        0.20373358936465588,
+        0.042821789018814435,
+        0.22406113810933914,
+        0.5293834835071907
+      ],
+      "weights_dict": {
+        "GAM": 0.20373358936465588,
+        "FAM": 0.042821789018814435,
+        "GBAM": 0.22406113810933914,
+        "TabNAM": 0.5293834835071907
+      },
+      "score": 0.7370998598992164,
+      "metrics": {
+        "rmse": 0.472886778450158,
+        "mae": 0.20902196848239502,
+        "r2": 0.7370998598992164
+      },
+      "is_best": false,
+      "timestamp": "2026-03-15T13:20:57.064376"
+    }
+  ],
+  "timestamp": "2026-03-15T13:20:57.068929"
+}

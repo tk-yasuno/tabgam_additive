@@ -1,0 +1,203 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{zhao2023llmsurvey}
+\citation{singhal2023med}
+\citation{dettmers2023qlora}
+\citation{hu2022lora}
+\citation{okazaki2024swallow}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}\protected@file@percent }
+\newlabel{sec:intro}{{1}{1}{Introduction}{section.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1}Background and Motivation}{1}{subsection.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2}Experimental Stages Overview}{1}{subsection.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Stage 1: Training Scale (Section~\ref {sec:scale}).}{1}{section*.2}\protected@file@percent }
+\citation{hu2022lora}
+\citation{dettmers2023qlora}
+\citation{liu2024dora}
+\citation{zhang2023adalora}
+\citation{valipour2023dylora}
+\citation{xu2023qalora}
+\citation{zhao2024galore}
+\citation{zheng2024llamafactory}
+\citation{han2023unsloth}
+\@writefile{toc}{\contentsline {paragraph}{Stage 2: Compare Finetuned SLMs (Section~\ref {sec:multimodel}).}{2}{section*.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Stage 3: Quantization (Section~\ref {sec:quant}).}{2}{section*.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3}Contributions}{2}{subsection.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.4}Paper Organization}{2}{subsection.1.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2}Related Work}{2}{section.2}\protected@file@percent }
+\newlabel{sec:related}{{2}{2}{Related Work}{section.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Parameter-Efficient Fine-Tuning}{2}{subsection.2.1}\protected@file@percent }
+\citation{dettmers2022llmint8}
+\citation{frantar2023gptq}
+\citation{lin2024awq}
+\citation{xiao2023smoothquant}
+\citation{tseng2024quip}
+\citation{wang2023bitnet}
+\citation{ma2024omniquant}
+\citation{gerganov2023ggml}
+\citation{meta2024llama3}
+\citation{okazaki2024swallow}
+\citation{fujii2024continual}
+\citation{qwen2024qwen25}
+\citation{sawada2024llmjp}
+\citation{mitsui2024rinna}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Three-stage progressive optimization methodology. Stage 1 identifies optimal training scale (n=4,000) via test-set NLL analysis across five dataset sizes. Stage 2 compares four Japanese LLMs under identical QLoRA training, revealing Japanese continual pre-training advantage (Swallow-8B: 2.830/3). Stage 3 discovers that Llama-3 models improve under Q4\_K\_M quantization (+0.01 to +0.03 points). Dashed arrows indicate data flow between stages.}}{3}{figure.caption.5}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:methodology_flow}{{1}{3}{Three-stage progressive optimization methodology. Stage 1 identifies optimal training scale (n=4,000) via test-set NLL analysis across five dataset sizes. Stage 2 compares four Japanese LLMs under identical QLoRA training, revealing Japanese continual pre-training advantage (Swallow-8B: 2.830/3). Stage 3 discovers that Llama-3 models improve under Q4\_K\_M quantization (+0.01 to +0.03 points). Dashed arrows indicate data flow between stages}{figure.caption.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Model Quantization}{3}{subsection.2.2}\protected@file@percent }
+\citation{zheng2023judging}
+\citation{li2023alpacaeval}
+\citation{dubois2024alpacafarm}
+\citation{chiang2024chatbotarena}
+\citation{beeching2023olm}
+\citation{ouyang2022instructgpt}
+\citation{touvron2023llama2}
+\citation{zhou2023lima}
+\citation{muennighoff2023scaling}
+\citation{hu2022lora}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Japanese Language Models}{4}{subsection.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}LLM Evaluation and LLM-as-Judge}{4}{subsection.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.5}Instruction Tuning and Domain Adaptation}{4}{subsection.2.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}Problem Formulation}{4}{section.3}\protected@file@percent }
+\newlabel{sec:problem}{{3}{4}{Problem Formulation}{section.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Task Definition}{4}{subsection.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Evaluation Protocol}{4}{subsection.3.2}\protected@file@percent }
+\citation{dettmers2023qlora}
+\citation{gerganov2023ggml}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Mathematical Formulation}{5}{subsection.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{QLoRA Fine-Tuning.}{5}{section*.6}\protected@file@percent }
+\newlabel{eq:lora}{{1}{5}{QLoRA Fine-Tuning}{equation.3.1}{}}
+\@writefile{toc}{\contentsline {paragraph}{Training Objective.}{5}{section*.7}\protected@file@percent }
+\newlabel{eq:loss}{{4}{5}{Training Objective}{equation.3.4}{}}
+\@writefile{toc}{\contentsline {paragraph}{Negative Log-Likelihood (NLL).}{5}{section*.8}\protected@file@percent }
+\newlabel{eq:nll}{{5}{5}{Negative Log-Likelihood (NLL)}{equation.3.5}{}}
+\@writefile{toc}{\contentsline {paragraph}{Perplexity.}{5}{section*.9}\protected@file@percent }
+\newlabel{eq:ppl}{{6}{5}{Perplexity}{equation.3.6}{}}
+\@writefile{toc}{\contentsline {paragraph}{Post-Training Quantization.}{5}{section*.10}\protected@file@percent }
+\newlabel{eq:merge}{{7}{5}{Post-Training Quantization}{equation.3.7}{}}
+\newlabel{eq:q4}{{8}{5}{Post-Training Quantization}{equation.3.8}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Dataset Construction}{5}{section.4}\protected@file@percent }
+\newlabel{sec:data}{{4}{5}{Dataset Construction}{section.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Knowledge Graph and QA Generation}{5}{subsection.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Relation-Type Distribution and Rebalancing}{5}{subsection.4.2}\protected@file@percent }
+\citation{okazaki2024swallow}
+\citation{han2023unsloth}
+\@writefile{toc}{\contentsline {paragraph}{Undersampling Strategy.}{6}{section*.11}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Scale-Learning Subsets}{6}{subsection.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Subset Quality Validation}{6}{subsection.4.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}Test Set}{6}{subsection.4.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}Stage 1: Training Scale}{6}{section.5}\protected@file@percent }
+\newlabel{sec:scale}{{5}{6}{Stage 1: Training Scale}{section.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Experimental Setup}{6}{subsection.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Base Model.}{6}{section*.15}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Training Configuration.}{6}{section*.16}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Training Loss Curves}{6}{subsection.5.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Relation-type distribution across five training scales. HAS\_CHAPTER proportion stabilizes at 17.1\% across all scales after undersampling, confirming uniform distribution scaling without introducing bias.}}{7}{figure.caption.12}\protected@file@percent }
+\newlabel{fig:subset_bias_reldist}{{2}{7}{Relation-type distribution across five training scales. HAS\_CHAPTER proportion stabilizes at 17.1\% across all scales after undersampling, confirming uniform distribution scaling without introducing bias}{figure.caption.12}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Answer length stability across five training scales. Average answer length remains consistent (370--380 characters) across all subset sizes, indicating that scale variation does not affect response complexity.}}{7}{figure.caption.13}\protected@file@percent }
+\newlabel{fig:subset_bias_anslen}{{3}{7}{Answer length stability across five training scales. Average answer length remains consistent (370--380 characters) across all subset sizes, indicating that scale variation does not affect response complexity}{figure.caption.13}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Quality metrics summary across five training scales. All quality metrics show stable distributions with coefficient of variation $<$ 3\%, confirming that scale variation does not introduce confounding factors in dataset composition.}}{7}{figure.caption.14}\protected@file@percent }
+\newlabel{fig:subset_bias_summary}{{4}{7}{Quality metrics summary across five training scales. All quality metrics show stable distributions with coefficient of variation $<$ 3\%, confirming that scale variation does not introduce confounding factors in dataset composition}{figure.caption.14}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Final training loss and wall-clock time by dataset scale.}}{7}{table.caption.18}\protected@file@percent }
+\newlabel{tab:scale_train}{{1}{7}{Final training loss and wall-clock time by dataset scale}{table.caption.18}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Test-Set Evaluation: NLL and Perplexity}{7}{subsection.5.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Training loss curves for five dataset scales (n=1,000 to 5,000). All models exhibit a characteristic three-phase pattern: rapid initial descent (epoch 0--0.4), plateau (1.0--2.0), and late-stage collapse (2.2--3.0). Larger datasets maintain consistently lower loss throughout training, with final loss decreasing from 0.869 (n=1,000) to 0.767 (n=5,000).}}{8}{figure.caption.17}\protected@file@percent }
+\newlabel{fig:scale_train_loss}{{5}{8}{Training loss curves for five dataset scales (n=1,000 to 5,000). All models exhibit a characteristic three-phase pattern: rapid initial descent (epoch 0--0.4), plateau (1.0--2.0), and late-stage collapse (2.2--3.0). Larger datasets maintain consistently lower loss throughout training, with final loss decreasing from 0.869 (n=1,000) to 0.767 (n=5,000)}{figure.caption.17}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Test-set generalization: NLL, perplexity, and overfitting diagnosis.}}{8}{table.caption.20}\protected@file@percent }
+\newlabel{tab:scale_test}{{2}{8}{Test-set generalization: NLL, perplexity, and overfitting diagnosis}{table.caption.20}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Lessons from Scale Learning}{8}{subsection.5.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6}Stage 2: Compare Finetuned SLMs}{8}{section.6}\protected@file@percent }
+\newlabel{sec:multimodel}{{6}{8}{Stage 2: Compare Finetuned SLMs}{section.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Model Selection and Rationale}{8}{subsection.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Training Configuration (Stage 2)}{8}{subsection.6.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Test-set generalization metrics across training scales. Top: Training loss decreases monotonically (left axis), but test-set NLL exhibits a U-curve with minimum at n=4,000 (right axis). Bottom: Test perplexity (PPL) mirrors NLL, confirming n=4,000 as optimal. The n=5,000 model overfits despite achieving lowest training loss.}}{9}{figure.caption.19}\protected@file@percent }
+\newlabel{fig:scale_test_nll}{{6}{9}{Test-set generalization metrics across training scales. Top: Training loss decreases monotonically (left axis), but test-set NLL exhibits a U-curve with minimum at n=4,000 (right axis). Bottom: Test perplexity (PPL) mirrors NLL, confirming n=4,000 as optimal. The n=5,000 model overfits despite achieving lowest training loss}{figure.caption.19}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}Evaluation Results: F16 Baseline}{9}{subsection.6.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.4}Score Distribution Analysis}{9}{subsection.6.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.5}Category-Specific Performance}{9}{subsection.6.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Multi-model performance comparison (F16 precision). Swallow-8B achieves the highest average score (2.820/3) and perfect-score rate (84\%), followed by ELYZA-JP-8B (2.700, 73\%). Qwen2.5-7B underperforms (2.420, 49\%) despite longest output length (677 chars), suggesting that multilingual pre-training dilutes Japanese technical vocabulary coverage.}}{10}{figure.caption.21}\protected@file@percent }
+\newlabel{fig:multimodel_overview}{{7}{10}{Multi-model performance comparison (F16 precision). Swallow-8B achieves the highest average score (2.820/3) and perfect-score rate (84\%), followed by ELYZA-JP-8B (2.700, 73\%). Qwen2.5-7B underperforms (2.420, 49\%) despite longest output length (677 chars), suggesting that multilingual pre-training dilutes Japanese technical vocabulary coverage}{figure.caption.21}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Multi-model comparison (F16 precision, 100-question evaluation).}}{10}{table.caption.22}\protected@file@percent }
+\newlabel{tab:multimodel_f16}{{3}{10}{Multi-model comparison (F16 precision, 100-question evaluation)}{table.caption.22}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Score distribution (F16 precision, 100 questions).}}{10}{table.caption.24}\protected@file@percent }
+\newlabel{tab:score_dist}{{4}{10}{Score distribution (F16 precision, 100 questions)}{table.caption.24}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.6}Multi-Axis Performance Comparison}{10}{subsection.6.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.7}Per-Question Score Trajectories}{10}{subsection.6.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7}Stage 3: Quantization}{10}{section.7}\protected@file@percent }
+\newlabel{sec:quant}{{7}{10}{Stage 3: Quantization}{section.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.1}Motivation and Methodology}{10}{subsection.7.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Quantization Workflow.}{10}{section*.28}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Score distribution across four models (100 questions). Swallow-8B and ELYZA-JP-8B show strong concentration on score-3 (green), with zero score-0 failures for ELYZA. Qwen2.5-7B exhibits the highest proportion of score-2 (yellow, 45\%) and score-0 (red, 1 case), indicating frequent under-supported or incorrect answers.}}{11}{figure.caption.23}\protected@file@percent }
+\newlabel{fig:score_dist}{{8}{11}{Score distribution across four models (100 questions). Swallow-8B and ELYZA-JP-8B show strong concentration on score-3 (green), with zero score-0 failures for ELYZA. Qwen2.5-7B exhibits the highest proportion of score-2 (yellow, 45\%) and score-0 (red, 1 case), indicating frequent under-supported or incorrect answers}{figure.caption.23}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.2}Quantization Results: Quality Comparison}{11}{subsection.7.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.3}Architecture-Dependent Quantization Effects}{11}{subsection.7.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Finding 1: Llama-3 Models Improve with Q4 Quantization.}{11}{section*.30}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Category-level performance heatmap. Swallow-8B maintains consistently high scores across all categories (darker green). Qwen2.5-7B struggles particularly on Design, Maintenance-Sabo, and Comparative/Cross-Cutting queries, which require cross-referencing multiple standards---a task where Japanese continual pre-training provides clear advantages.}}{11}{figure.caption.25}\protected@file@percent }
+\newlabel{fig:category_heatmap}{{9}{11}{Category-level performance heatmap. Swallow-8B maintains consistently high scores across all categories (darker green). Qwen2.5-7B struggles particularly on Design, Maintenance-Sabo, and Comparative/Cross-Cutting queries, which require cross-referencing multiple standards---a task where Japanese continual pre-training provides clear advantages}{figure.caption.25}{}}
+\@writefile{toc}{\contentsline {paragraph}{Finding 2: Qwen2.5-7B (GQA) Degrades Severely Under Q4 Quantization.}{11}{section*.31}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Practical Implication.}{11}{section*.32}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces F16 vs.\ Q4\_K\_M quantization: quality and efficiency comparison.}}{12}{table.caption.29}\protected@file@percent }
+\newlabel{tab:quant_comparison}{{5}{12}{F16 vs.\ Q4\_K\_M quantization: quality and efficiency comparison}{table.caption.29}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Five-axis radar chart comparison. Swallow-8B excels in quality metrics (score, perfect-score rate, stability) but lags in inference speed. ELYZA-JP-8B offers balanced performance across all dimensions. Qwen2.5-7B's speed advantage is offset by significantly lower quality metrics.}}{12}{figure.caption.26}\protected@file@percent }
+\newlabel{fig:radar}{{10}{12}{Five-axis radar chart comparison. Swallow-8B excels in quality metrics (score, perfect-score rate, stability) but lags in inference speed. ELYZA-JP-8B offers balanced performance across all dimensions. Qwen2.5-7B's speed advantage is offset by significantly lower quality metrics}{figure.caption.26}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.4}Inference Speed and Model Size}{12}{subsection.7.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {8}Engineering Lessons Learned}{12}{section.8}\protected@file@percent }
+\newlabel{sec:lessons}{{8}{12}{Engineering Lessons Learned}{section.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.1}Lesson 1: Test-Set NLL is the Ground Truth for Scale Selection}{12}{subsection.8.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.2}Lesson 2: Japanese Continual Pre-Training Trumps Multilingual Breadth}{12}{subsection.8.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Per-question score scatter plot (100 questions). Swallow-8B maintains consistently high scores across question IDs (average line at 2.83), with minimal variance. Qwen2.5-7B shows high variance and frequent drops to score-1 or score-0, indicating brittle performance on specific question types.}}{13}{figure.caption.27}\protected@file@percent }
+\newlabel{fig:score_scatter}{{11}{13}{Per-question score scatter plot (100 questions). Swallow-8B maintains consistently high scores across question IDs (average line at 2.83), with minimal variance. Qwen2.5-7B shows high variance and frequent drops to score-1 or score-0, indicating brittle performance on specific question types}{figure.caption.27}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.3}Lesson 3: Quantization Effects are Architecture-Dependent}{13}{subsection.8.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.4}Lesson 4: LoRA Rank r=32 Provides Marginal Gains Over r=16}{13}{subsection.8.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.5}Lesson 5: Data Rebalancing Prevents Structural Bias}{13}{subsection.8.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {9}Discussion}{13}{section.9}\protected@file@percent }
+\newlabel{sec:discussion}{{9}{13}{Discussion}{section.9}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.1}Generalization to Other Domains}{13}{subsection.9.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.2}Limitations}{14}{subsection.9.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.3}Production Deployment Recommendations}{14}{subsection.9.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Optimal Configuration: Swallow-8B Q4\_K\_M.}{14}{section*.33}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Latency-Optimized: ELYZA-JP-8B Q4\_K\_M.}{14}{section*.34}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Architecture-Specific Quantization Strategy.}{14}{section*.35}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.4}Future Directions}{14}{subsection.9.4}\protected@file@percent }
+\bibstyle{unsrt}
+\bibdata{qlora_scale_quant_2026}
+\bibcite{zhao2023llmsurvey}{1}
+\bibcite{singhal2023med}{2}
+\bibcite{dettmers2023qlora}{3}
+\bibcite{hu2022lora}{4}
+\bibcite{okazaki2024swallow}{5}
+\bibcite{liu2024dora}{6}
+\bibcite{zhang2023adalora}{7}
+\bibcite{valipour2023dylora}{8}
+\bibcite{xu2023qalora}{9}
+\bibcite{zhao2024galore}{10}
+\bibcite{zheng2024llamafactory}{11}
+\bibcite{han2023unsloth}{12}
+\bibcite{dettmers2022llmint8}{13}
+\bibcite{frantar2023gptq}{14}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Recommended quantization levels by architecture.}}{15}{table.caption.36}\protected@file@percent }
+\newlabel{tab:quant_recommendations}{{6}{15}{Recommended quantization levels by architecture}{table.caption.36}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {10}Conclusion}{15}{section.10}\protected@file@percent }
+\newlabel{sec:conclusion}{{10}{15}{Conclusion}{section.10}{}}
+\bibcite{lin2024awq}{15}
+\bibcite{xiao2023smoothquant}{16}
+\bibcite{tseng2024quip}{17}
+\bibcite{wang2023bitnet}{18}
+\bibcite{ma2024omniquant}{19}
+\bibcite{gerganov2023ggml}{20}
+\bibcite{meta2024llama3}{21}
+\bibcite{fujii2024continual}{22}
+\bibcite{qwen2024qwen25}{23}
+\bibcite{sawada2024llmjp}{24}
+\bibcite{mitsui2024rinna}{25}
+\bibcite{zheng2023judging}{26}
+\bibcite{li2023alpacaeval}{27}
+\bibcite{dubois2024alpacafarm}{28}
+\bibcite{chiang2024chatbotarena}{29}
+\bibcite{beeching2023olm}{30}
+\bibcite{ouyang2022instructgpt}{31}
+\bibcite{touvron2023llama2}{32}
+\bibcite{zhou2023lima}{33}
+\bibcite{muennighoff2023scaling}{34}
+\gdef \@abspage@last{16}

@@ -301,15 +301,197 @@ def calculate_residual_statistics(y_true: np.ndarray,
     return stats
 
 
+def calculate_classification_metrics(y_true: np.ndarray, 
+                                    y_pred: np.ndarray,
+                                    y_pred_proba: Optional[np.ndarray] = None,
+                                    prefix: str = '') -> Dict[str, float]:
+    """
+    分類評価指標の計算
+    
+    Parameters
+    ----------
+    y_true : np.ndarray
+        真のクラスラベル
+    y_pred : np.ndarray
+        予測クラスラベル
+    y_pred_proba : np.ndarray, optional
+        各クラスの予測確率（shape: [n_samples, n_classes]）
+    prefix : str, optional
+        指標名のプレフィックス（例: 'train_', 'test_'）
+        
+    Returns
+    -------
+    dict
+        評価指標の辞書
+    """
+    from sklearn.metrics import (accuracy_score, precision_score, recall_score, 
+                                 f1_score, confusion_matrix, cohen_kappa_score,
+                                 log_loss)
+    
+    metrics = {}
+    
+    # Accuracy
+    accuracy = accuracy_score(y_true, y_pred)
+    metrics[f'{prefix}accuracy'] = accuracy
+    
+    # Precision, Recall, F1 (macro average)
+    precision = precision_score(y_true, y_pred, average='macro', zero_division=0)
+    metrics[f'{prefix}precision_macro'] = precision
+    
+    recall = recall_score(y_true, y_pred, average='macro', zero_division=0)
+    metrics[f'{prefix}recall_macro'] = recall
+    
+    f1 = f1_score(y_true, y_pred, average='macro', zero_division=0)
+    metrics[f'{prefix}f1_macro'] = f1
+    
+    # Weighted average (クラス不均衡対応)
+    precision_weighted = precision_score(y_true, y_pred, average='weighted', zero_division=0)
+    metrics[f'{prefix}precision_weighted'] = precision_weighted
+    
+    recall_weighted = recall_score(y_true, y_pred, average='weighted', zero_division=0)
+    metrics[f'{prefix}recall_weighted'] = recall_weighted
+    
+    f1_weighted = f1_score(y_true, y_pred, average='weighted', zero_division=0)
+    metrics[f'{prefix}f1_weighted'] = f1_weighted
+    
+    # Cohen's Kappa (クラス不均衡に頑健)
+    kappa = cohen_kappa_score(y_true, y_pred)
+    metrics[f'{prefix}kappa'] = kappa
+    
+    # Log Loss (確率が利用可能な場合)
+    if y_pred_proba is not None:
+        try:
+            logloss = log_loss(y_true, y_pred_proba)
+            metrics[f'{prefix}logloss'] = logloss
+        except:
+            pass
+    
+    # Confusion Matrix（各クラスの予測正解率）
+    cm = confusion_matrix(y_true, y_pred)
+    for i in range(cm.shape[0]):
+        if cm[i, :].sum() > 0:
+            class_accuracy = cm[i, i] / cm[i, :].sum()
+            metrics[f'{prefix}class_{i}_accuracy'] = class_accuracy
+    
+    return metrics
+
+
+def print_classification_results(results: Dict[str, float]):
+    """
+    分類結果のプリント
+    
+    Parameters
+    ----------
+    results : dict
+        評価指標辞書
+    """
+    print("\n" + "="*60)
+    print("Classification Evaluation Results")
+    print("="*60)
+    
+    if 'model' in results:
+        print(f"\nModel: {results['model']}")
+    
+    # 訓練データ指標
+    print("\n[Training Set]")
+    train_keys = [k for k in results.keys() if k.startswith('train_')]
+    for key in sorted(train_keys):
+        metric_name = key.replace('train_', '')
+        print(f"  {metric_name:25s}: {results[key]:8.4f}")
+    
+    # テストデータ指標
+    print("\n[Test Set]")
+    test_keys = [k for k in results.keys() if k.startswith('test_')]
+    for key in sorted(test_keys):
+        metric_name = key.replace('test_', '')
+        print(f"  {metric_name:25s}: {results[key]:8.4f}")
+    
+    print("="*60)
+
+
+def evaluate_classification_model(model,
+                                  X_train: np.ndarray,
+                                  y_train: np.ndarray,
+                                  X_test: np.ndarray,
+                                  y_test: np.ndarray,
+                                  model_name: str = 'Model') -> Dict[str, float]:
+    """
+    分類モデルの訓練・テスト評価
+    
+    Parameters
+    ----------
+    model : object
+        学習済みモデル（predict, predict_probaメソッドを持つ）
+    X_train : np.ndarray
+        訓練データ特徴量
+    y_train : np.ndarray
+        訓練データターゲット
+    X_test : np.ndarray
+        テストデータ特徴量
+    y_test : np.ndarray
+        テストデータターゲット
+    model_name : str
+        モデル名
+        
+    Returns
+    -------
+    dict
+        評価指標辞書
+    """
+    results = {'model': model_name}
+    
+    # 訓練データの予測
+    y_train_pred = model.predict(X_train)
+    
+    # 確率予測（利用可能な場合）
+    y_train_proba = None
+    try:
+        if hasattr(model, 'predict_proba'):
+            y_train_proba = model.predict_proba(X_train)
+    except:
+        pass
+    
+    train_metrics = calculate_classification_metrics(
+        y_train, y_train_pred, y_train_proba, prefix='train_'
+    )
+    results.update(train_metrics)
+    
+    # テストデータの予測
+    y_test_pred = model.predict(X_test)
+    
+    y_test_proba = None
+    try:
+        if hasattr(model, 'predict_proba'):
+            y_test_proba = model.predict_proba(X_test)
+    except:
+        pass
+    
+    test_metrics = calculate_classification_metrics(
+        y_test, y_test_pred, y_test_proba, prefix='test_'
+    )
+    results.update(test_metrics)
+    
+    return results
+
+
 if __name__ == '__main__':
     # テスト
     print("Evaluation functions loaded successfully!")
     
-    # ダミーデータでテスト
-    y_true = np.random.rand(100)
-    y_pred = y_true + np.random.randn(100) * 0.1
+    # 回帰用ダミーデータでテスト
+    y_true_reg = np.random.rand(100)
+    y_pred_reg = y_true_reg + np.random.randn(100) * 0.1
     
-    metrics = calculate_metrics(y_true, y_pred, prefix='test_')
-    print("\nTest Metrics:")
-    for k, v in metrics.items():
+    metrics_reg = calculate_metrics(y_true_reg, y_pred_reg, prefix='test_')
+    print("\nRegression Test Metrics:")
+    for k, v in metrics_reg.items():
+        print(f"  {k}: {v:.6f}")
+    
+    # 分類用ダミーデータでテスト
+    y_true_clf = np.random.randint(0, 4, 100)
+    y_pred_clf = np.random.randint(0, 4, 100)
+    
+    metrics_clf = calculate_classification_metrics(y_true_clf, y_pred_clf, prefix='test_')
+    print("\nClassification Test Metrics:")
+    for k, v in metrics_clf.items():
         print(f"  {k}: {v:.6f}")
