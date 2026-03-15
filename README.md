@@ -1,4 +1,4 @@
-# Diverse GAMs: Multi-Domain Degradation Prediction Framework
+# Diverse Additive Models: Multi-Domain Degradation Prediction Framework
 
 **Version**: v0.8 (Current)
 **Date**: March 15, 2026
